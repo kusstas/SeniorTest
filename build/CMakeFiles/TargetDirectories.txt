@@ -1,0 +1,3 @@
+/home/kusstas/Desktop/AyxCppTest/build/CMakeFiles/edit_cache.dir
+/home/kusstas/Desktop/AyxCppTest/build/CMakeFiles/rebuild_cache.dir
+/home/kusstas/Desktop/AyxCppTest/build/CMakeFiles/AyxCppTest.dir
