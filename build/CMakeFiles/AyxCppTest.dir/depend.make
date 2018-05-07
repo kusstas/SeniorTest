@@ -28,7 +28,6 @@ CMakeFiles/AyxCppTest.dir/exercise6.cpp.o: ../exercise6.cpp
 
 CMakeFiles/AyxCppTest.dir/main.cpp.o: ../catch/catch.hpp
 CMakeFiles/AyxCppTest.dir/main.cpp.o: ../main.cpp
-CMakeFiles/AyxCppTest.dir/main.cpp.o: ../spatial.h
 
 CMakeFiles/AyxCppTest.dir/polygon.cpp.o: ../polygon.cpp
 CMakeFiles/AyxCppTest.dir/polygon.cpp.o: ../polygon.h

@@ -1,4 +1,5 @@
 #include "polygon.h"
+#include <cmath>
 
 namespace AyxCppTest
 {
@@ -30,20 +31,27 @@ namespace AyxCppTest
 
     bool Polygon::Contains(Point const& pt) 
     {
-        bool intersect = true;
+        double max_r = 0;
 
-        std::vector<std::pair<Point, Point>> lines;
+        for (auto const& p : points) { // find max distance
+            double dx = p.m_x - pt.m_x;
+            double dy = p.m_y - pt.m_y;
+
+            double r = sqrt(dx * dx + dy * dy);
+            if (r > max_r) {
+                max_r = r;
+            }
+        }
+
+        Point p2(pt.m_x + max_r, pt.m_y); // second point of ray
+
+        int intersects = 0;
         for (auto it = points.begin(); it != points.end() - 1; ++it) {
-            lines.emplace_back(*it, *(it + 1));
+            Point out(0, 0);
+            if (lineIntersection(pt, p2, *it, *(it + 1), out) && out != *it) {
+                intersects++;
+            }
         }
-        lines.emplace_back(lines.back(), lines.front());
-
-
-        for (auto const& p : points) {
-            for (auto const& l : lines)
-        }
-
-        return intersect;
+        return intersects % 2 == 1;
     }
-
 }

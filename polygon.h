@@ -1,7 +1,6 @@
 #ifndef POLYGON_H
 #define POLYGON_H
 
-#include <utility>
 #include <vector>
 #include <initializer_list>
 #include "spatial.h"

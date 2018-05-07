@@ -315,16 +315,14 @@ Add.h
 /home/kusstas/Desktop/AyxCppTest/main.cpp
 catch/catch.hpp
 /home/kusstas/Desktop/AyxCppTest/catch/catch.hpp
-spatial.h
-/home/kusstas/Desktop/AyxCppTest/spatial.h
 
 /home/kusstas/Desktop/AyxCppTest/polygon.cpp
 polygon.h
 /home/kusstas/Desktop/AyxCppTest/polygon.h
+cmath
+-
 
 /home/kusstas/Desktop/AyxCppTest/polygon.h
-utility
--
 vector
 -
 initializer_list
