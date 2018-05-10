@@ -2,6 +2,7 @@
 #include <memory>
 #include <array>
 #include <thread>
+#include <mutex>
 #include "spatial.h"
 
 namespace AyxCppTest
@@ -17,6 +18,7 @@ namespace AyxCppTest
 		class RectangleSizeCounter
 		{
 		private:
+			std::mutex m_mutex;
 			double m_nTotalSize{ 0 };
 		public:
 			RectangleSizeCounter();
@@ -30,8 +32,9 @@ namespace AyxCppTest
 
 		void RectangleSizeCounter::AddRectangle(Rectangle rect)
 		{
-			auto oldSize = m_nTotalSize;
-			m_nTotalSize = oldSize + rect.Size();
+			auto tmp = rect.Size();
+			std::lock_guard<std::mutex> lock(m_mutex);
+			m_nTotalSize += tmp;
 		}
 
 		double RectangleSizeCounter::GetTotalSize()
@@ -44,7 +47,7 @@ namespace AyxCppTest
 	TEST_CASE("exercise4")
 	{
 		// enable to run exercise 4 tests
-#if 0
+#if 1
 		std::array<Rectangle, 4> rectangles{ Rectangle{ Point{ 1,1 }, Point{ 2,2 } },
 			Rectangle{ Point{ 2,2 }, Point{ 4,4 } },
 			Rectangle{ Point{ 1,1 }, Point{ 3,2 } },

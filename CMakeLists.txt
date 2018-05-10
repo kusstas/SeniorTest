@@ -19,3 +19,5 @@ add_executable(AyxCppTest
 	polygon.h
 	main.cpp
 	catch/catch.hpp)
+
+target_link_libraries(AyxCppTest pthread)
